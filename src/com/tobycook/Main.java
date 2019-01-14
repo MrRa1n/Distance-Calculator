@@ -2,30 +2,43 @@ package com.tobycook;
 
 import com.tobycook.web.MapsApi;
 
+import java.util.*;
 
-import java.util.Scanner;
 import com.google.gson.*;
 
 public class Main {
 
     // TODO: use distance formula to find out distance
     public static void main(String[] args) {
-
-        MapsApi mapsApi = new MapsApi();
-
-        Scanner scanner = new Scanner(System.in);
+        HashMap<String, double[]> cities = new HashMap<>();
 
         System.out.print("Please enter the name of the first city: ");
-        String city_1 = scanner.nextLine();
+        String firstCity = readCityName(cities);
 
-        String responseContent = mapsApi.MapsApiConnection(city_1);
+        System.out.print("Please enter the name of the second city: ");
+        String secondCity = readCityName(cities);
 
-        System.out.println(responseContent);
+        double distance = calculateDistance(cities, firstCity, secondCity);
 
-        getCoordinatesOfCities(responseContent);
+        System.out.println(distance);
     }
 
-    private static void getCoordinatesOfCities(String mapsApiResponse) {
+    private static String readCityName(HashMap<String, double[]> cities) {
+        MapsApi mapsApi = new MapsApi();
+        Scanner scanner = new Scanner(System.in);
+        // read name of city from command line
+        String cityName = scanner.nextLine();
+        // make request to api and store response
+        String responseContent = mapsApi.MapsApiConnection(cityName);
+        // store coordinates of the city
+        double[] coordinates = getCoordinatesOfCity(responseContent);
+        // add city name and it's coordinates to HashMap
+        cities.put(cityName, coordinates);
+
+        return cityName;
+    }
+
+    private static double[] getCoordinatesOfCity(String mapsApiResponse) {
         // parse the response string into json
         JsonParser jsonParser = new JsonParser();
         JsonElement jsonElement = jsonParser.parse(mapsApiResponse);
@@ -41,12 +54,28 @@ public class Main {
         jsonObject = jsonObject.get("geometry").getAsJsonObject();
         jsonObject = jsonObject.get("location").getAsJsonObject();
 
-        // get lat and long values and store as double
-        double latitude = jsonObject.get("lat").getAsDouble();
-        double longitude = jsonObject.get("lng").getAsDouble();
+        double[] coordinates = new double[2];
 
+        // get lat and long values and store as double
+        coordinates[0] = jsonObject.get("lat").getAsDouble();
+        coordinates[1] = jsonObject.get("lng").getAsDouble();
 
         // return values as double so that math can be performed
-        System.out.println(latitude + ", " + longitude);
+        return coordinates;
+    }
+
+    // Calculate the distance between two cities from Google Maps using Haversine formula
+    private static double calculateDistance(HashMap<String, double[]> cities, String firstCity, String secondCity) {
+
+        double[] firstCityCoordinates = cities.get(firstCity);
+        double[] secondCityCoordinates = cities.get(secondCity);
+
+        double x = firstCityCoordinates[0] - secondCityCoordinates[0];
+        double y = firstCityCoordinates[1] - secondCityCoordinates[1];
+
+        double distance = Math.sqrt(
+                ((x*x)+(y+y))
+        );
+        return distance;
     }
 }
