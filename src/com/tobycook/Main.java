@@ -65,17 +65,39 @@ public class Main {
     }
 
     // Calculate the distance between two cities from Google Maps using Haversine formula
+    // Giving a 'as-the-crow-flies' distance between two cities
+    // Source: http://www.movable-type.co.uk/scripts/latlong.html
     private static double calculateDistance(HashMap<String, double[]> cities, String firstCity, String secondCity) {
 
+        // Radius of earth in KM
+        int earthRadius = 6371;
+
+        double lat1, lat2, lon1, lon2,
+                latDifference, lonDifference, a, c, distance;
+
+        // Retrieve lat and lon for each city from HashMap
         double[] firstCityCoordinates = cities.get(firstCity);
         double[] secondCityCoordinates = cities.get(secondCity);
 
-        double x = firstCityCoordinates[0] - secondCityCoordinates[0];
-        double y = firstCityCoordinates[1] - secondCityCoordinates[1];
+        // Convert the lat and lon of each city into radians
+        lat1 = Math.toRadians(firstCityCoordinates[0]);
+        lat2 = Math.toRadians(secondCityCoordinates[0]);
+        lon1 = Math.toRadians(firstCityCoordinates[1]);
+        lon2 = Math.toRadians(secondCityCoordinates[1]);
 
-        double distance = Math.sqrt(
-                ((x*x)+(y+y))
-        );
+        // Get the difference of lat and lon
+        latDifference = lat2-lat1;
+        lonDifference = lon2-lon1;
+
+        // Haversine formula
+        a = Math.sin(latDifference/2)  * Math.sin(latDifference/2) +
+            Math.cos(lat1) * Math.cos(lat2) *
+            Math.sin(lonDifference/2) * Math.sin(lonDifference/2);
+
+        c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+        distance = earthRadius * c;
+
         return distance;
     }
 }

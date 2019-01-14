@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class MapsApi {
 
@@ -11,7 +13,8 @@ public class MapsApi {
     public String MapsApiConnection(String cityName) {
         try {
             String outputFormat = "json";
-            String apiKey = "";
+
+            String apiKey = new String(Files.readAllBytes(Paths.get("api_key.txt")));
 
             String mapsUrl = "https://maps.googleapis.com/maps/api/geocode/"
                     +outputFormat+
