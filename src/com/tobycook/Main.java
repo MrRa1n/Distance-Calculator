@@ -1,6 +1,8 @@
 package com.tobycook;
 
 import com.tobycook.city.Cities;
+import com.tobycook.web.MapsApi;
+
 import java.util.*;
 
 public class Main {
@@ -17,7 +19,11 @@ public class Main {
 
         double distance = cities.calculateDistance(cityStore, firstCity, secondCity);
 
+
         System.out.println(distance +  " miles");
+
+        MapsApi api = new MapsApi();
+        api.distanceMatrixApiRequest("London", "Mexico", "driving");
     }
 
 
