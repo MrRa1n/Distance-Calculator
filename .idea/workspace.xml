@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="919d3a5a-19fa-4b78-828a-95c0f003729d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tobycook/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tobycook/city/Cities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/city/Cities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java" afterDir="false" />
-    </list>
+    <list default="true" id="919d3a5a-19fa-4b78-828a-95c0f003729d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -240,7 +235,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993513" />
