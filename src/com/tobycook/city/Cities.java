@@ -114,7 +114,7 @@ public class Cities {
 
             c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-            distance = Math.round(earthRadius * c);
+            distance = earthRadius * c;
 
             return distance;
         } catch (Exception ex) {

@@ -1,6 +1,9 @@
 package com.tobycook.web;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -75,8 +78,8 @@ public class MapsApi {
             }
             in.close();
 
-
-            JsonObject jsonObject = new JsonObject().getAsJsonObject(responseContent.toString());
+            JsonElement jsonElement = new JsonParser().parse(responseContent.toString());
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
 
             return jsonObject;
 

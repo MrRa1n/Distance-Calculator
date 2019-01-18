@@ -19,11 +19,11 @@ public class Main {
 
         double distance = cities.calculateDistance(cityStore, firstCity, secondCity);
 
-
-        System.out.println(distance +  " miles");
+        System.out.printf("%.2f km\n", distance);
+        System.out.printf("%.2f mi\n", distance * 0.62137);
 
         MapsApi api = new MapsApi();
-        api.distanceMatrixApiRequest("London", "Mexico", "driving");
+        api.distanceMatrixApiRequest("London", "Edinburgh", "driving");
     }
 
 
