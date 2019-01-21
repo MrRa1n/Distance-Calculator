@@ -122,4 +122,13 @@ public class Cities {
         }
         return 0;
     }
+
+    public double getDistance(JsonObject apiResponse) {
+        JsonArray jsonArray = apiResponse.getAsJsonArray("rows");
+        System.out.println(jsonArray);
+
+        apiResponse = jsonArray.get(0).getAsJsonObject();
+
+        return 0;
+    }
 }
