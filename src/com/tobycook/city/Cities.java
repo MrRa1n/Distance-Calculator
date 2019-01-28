@@ -4,35 +4,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.tobycook.web.MapsApi;
-
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Cities {
-    /**
-     * Read in the name of the city from the command line and store the city name and
-     * make a request to he API for the coordinates. If returned, store the
-     * coordinates in a HashMap
-     *
-     * @param cities - HashMap containing city name and its coordinates
-     * @return the name of the city provided
-     */
-    public String readCityName(HashMap<String, double[]> cities) {
-        MapsApi mapsApi = new MapsApi();
-        Scanner scanner = new Scanner(System.in);
-        // read name of city from command line
-        String cityName = scanner.nextLine();
-        // make request to api and store response
-        String responseContent = mapsApi.geocodeApiRequest(cityName);
-        // store coordinates of the city
-        double[] coordinates = getCoordinatesOfCity(responseContent);
-        // add city name and it's coordinates to HashMap
-        cities.put(cityName, coordinates);
-
-        return cityName;
-    }
-
     /**
      * Method for converting the String API response into JSON and
      * extracting latitude and longitude
@@ -120,15 +94,6 @@ public class Cities {
         } catch (Exception ex) {
             System.out.println("Error" + ex.getMessage());
         }
-        return 0;
-    }
-
-    public double getDistance(JsonObject apiResponse) {
-        JsonArray jsonArray = apiResponse.getAsJsonArray("rows");
-        System.out.println(jsonArray);
-
-        apiResponse = jsonArray.get(0).getAsJsonObject();
-
         return 0;
     }
 }

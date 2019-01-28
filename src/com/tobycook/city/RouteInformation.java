@@ -1,7 +1,5 @@
 package com.tobycook.city;
 
-import java.sql.Time;
-
 public class RouteInformation {
 
     private String origin;
@@ -9,7 +7,9 @@ public class RouteInformation {
     private double distanceInKm;
     private double distanceInMiles;
     private String modeOfTransport;
-    private Time duration;
+    private int duration;
+
+    public RouteInformation() {}
 
     public String getOrigin() {
         return origin;
@@ -51,11 +51,11 @@ public class RouteInformation {
         this.modeOfTransport = modeOfTransport;
     }
 
-    public Time getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(Time duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 

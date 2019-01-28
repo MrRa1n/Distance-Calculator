@@ -44,9 +44,9 @@ public class MapsApi {
             return content.toString();
 
         } catch (Exception ex) {
-            System.out.println("Something went wrong...\n" + ex.getMessage());
+            ex.printStackTrace();
         }
-        return "";
+        return null;
     }
 
     public JsonObject distanceMatrixApiRequest(String originCity, String destinationCity, String travelMode) {
@@ -84,7 +84,7 @@ public class MapsApi {
             return jsonObject;
 
         } catch (Exception ex) {
-            System.out.println("Error:" + ex.getMessage());
+            ex.printStackTrace();
         }
         return null;
     }
