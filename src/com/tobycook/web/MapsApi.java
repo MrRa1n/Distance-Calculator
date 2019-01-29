@@ -38,14 +38,13 @@ public class MapsApi {
             String inputLine;
             StringBuffer responseContent = new StringBuffer();
             while ((inputLine =  in.readLine()) != null) {
-                responseContent.append(inputLine + "\n");
+                responseContent.append(inputLine);
             }
             in.close();
 
             JsonElement jsonElement = new JsonParser().parse(responseContent.toString());
-            JsonObject jsonObject = jsonElement.getAsJsonObject();
 
-            return jsonObject;
+            return jsonElement.getAsJsonObject();
 
         } catch (Exception ex) {
             ex.printStackTrace();

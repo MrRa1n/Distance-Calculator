@@ -26,13 +26,8 @@ public class Main {
         // Read mode of travel
         String travelMode = readTravelMode();
 
-
         // Make a call to distance matrix api
         JsonObject apiResponse = new MapsApi().distanceMatrixApiRequest(origin, destination, travelMode);
-
-        if (apiResponse == null) {
-
-        }
 
         // iterate over the json response from api
         origin = apiResponse.get("origin_addresses").getAsString();
@@ -44,16 +39,24 @@ public class Main {
         JsonObject distance = (JsonObject) elementsObj.get("distance");
         JsonObject duration = (JsonObject) elementsObj.get("duration");
 
-
         // Create new instance of Route and store parsed data
         Route route = new Route();
 
-        route.setOrigin(origin);
-        route.setDestination(destination);
-        route.setDistanceInKm(distance.get("value").getAsDouble()/1000);
-        route.setDistanceInMiles((distance.get("value").getAsDouble()/1000) / 1.609);
-        route.setModeOfTransport(travelMode);
-        route.setDuration(duration.get("value").getAsInt());
+        try {
+            route.setOrigin(origin);
+            route.setDestination(destination);
+            route.setDistanceInKm(distance.get("value").getAsDouble()/1000);
+            route.setDistanceInMiles((distance.get("value").getAsDouble()/1000) / 1.609);
+            route.setModeOfTransport(travelMode);
+            route.setDuration(duration.get("value").getAsInt() / 3600);
+        } catch (NullPointerException e) {
+            System.out.println("Error: No results available for that route");
+            return;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
+
 
         // Print formatted information about travel
         route.print();
