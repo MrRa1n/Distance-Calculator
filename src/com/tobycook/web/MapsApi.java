@@ -1,6 +1,5 @@
 package com.tobycook.web;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -14,41 +13,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class MapsApi {
-
-    // TODO: read in api key from file
-    public String geocodeApiRequest(String cityName) {
-        try {
-            String apiKey = new String(Files.readAllBytes(Paths.get("api_key.txt")));
-            String geocodeBaseUrl  = "https://maps.googleapis.com/maps/api/geocode/json";
-            String mapsUrl = geocodeBaseUrl +
-                             "?address=" + URLEncoder.encode(cityName, "UTF-8") +
-                             "&key=" + URLEncoder.encode(apiKey, "UTF-8");
-
-            // Build connection
-            URL url = new URL(mapsUrl);
-            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-            connection.setRequestMethod("GET");
-
-
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream())
-            );
-
-            String inputLine;
-            StringBuffer content = new StringBuffer();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine + "\n");
-            }
-            in.close();
-
-            return content.toString();
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return null;
-    }
-
     public JsonObject distanceMatrixApiRequest(String originCity, String destinationCity, String travelMode) {
         try {
             String apiKey = new String(Files.readAllBytes(Paths.get("api_key.txt")));

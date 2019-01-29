@@ -1,54 +1,8 @@
 package com.tobycook.city;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import java.util.HashMap;
 
 public class Cities {
-    /**
-     * Method for converting the String API response into JSON and
-     * extracting latitude and longitude
-     *
-     * @param mapsApiResponse is the response content given by Google Maps API
-     * @return array containing latitude and longitude of provided city name
-     */
-    private double[] getCoordinatesOfCity(String mapsApiResponse) {
-        try {
-            // parse the response string into json
-            JsonParser jsonParser = new JsonParser();
-            JsonElement jsonElement = jsonParser.parse(mapsApiResponse);
-
-            // convert into a json object
-            JsonObject jsonObject = jsonElement.getAsJsonObject();
-            // convert results into JsonArray
-            JsonArray jsonArray = jsonObject.getAsJsonArray("results");
-            // Throw Exception if no results returned
-            if (jsonArray.size() == 0) {
-                throw new Exception("Error: No results returned for that city name");
-            }
-            // work through the tree until lat and long are reached
-            // could possibly be simplified using loop
-            jsonObject = jsonArray.get(0).getAsJsonObject();
-            jsonObject = jsonObject.get("geometry").getAsJsonObject();
-            jsonObject = jsonObject.get("location").getAsJsonObject();
-
-            double[] coordinates = new double[2];
-
-            // get lat and long values and store as double
-            coordinates[0] = jsonObject.get("lat").getAsDouble();
-            coordinates[1] = jsonObject.get("lng").getAsDouble();
-
-            // return values as double so that math can be performed
-            return coordinates;
-
-        } catch (Exception ex) {
-            System.out.println("Error: " + ex.getMessage());
-        }
-        return null;
-    }
-
     /**
      * Calculate the distance between two cities from Google Maps using Haversine formula
      * Giving a 'as-the-crow-flies' distance between two cities

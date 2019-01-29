@@ -1,6 +1,6 @@
 package com.tobycook.city;
 
-public class RouteInformation {
+public class Route {
 
     private String origin;
     private String destination;
@@ -9,9 +9,9 @@ public class RouteInformation {
     private String modeOfTransport;
     private int duration;
 
-    public RouteInformation() {}
+    public Route() {}
 
-    public String getOrigin() {
+    private String getOrigin() {
         return origin;
     }
 
@@ -19,7 +19,7 @@ public class RouteInformation {
         this.origin = origin;
     }
 
-    public String getDestination() {
+    private String getDestination() {
         return destination;
     }
 
@@ -27,7 +27,7 @@ public class RouteInformation {
         this.destination = destination;
     }
 
-    public double getDistanceInKm() {
+    private double getDistanceInKm() {
         return distanceInKm;
     }
 
@@ -35,7 +35,7 @@ public class RouteInformation {
         this.distanceInKm = distanceInKm;
     }
 
-    public double getDistanceInMiles() {
+    private double getDistanceInMiles() {
         return distanceInMiles;
     }
 
@@ -43,7 +43,7 @@ public class RouteInformation {
         this.distanceInMiles = distanceInMiles;
     }
 
-    public String getModeOfTransport() {
+    private String getModeOfTransport() {
         return modeOfTransport;
     }
 
@@ -51,12 +51,23 @@ public class RouteInformation {
         this.modeOfTransport = modeOfTransport;
     }
 
-    public int getDuration() {
+    private int getDuration() {
         return duration;
     }
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public void print() {
+        System.out.println(
+                "Origin city: " + getOrigin() + "\n"
+                        + "Destination city: " + getDestination() + "\n"
+                        + "Distance in km: " + String.format("%.2f", getDistanceInKm()) + "\n"
+                        + "Distance in miles: " + String.format("%.2f", getDistanceInMiles()) + "\n"
+                        + "Mode of transport: " + getModeOfTransport() + "\n"
+                        + "Journey time: " + getDuration()
+        );
     }
 
 }

@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="919d3a5a-19fa-4b78-828a-95c0f003729d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DistanceCalculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DistanceCalculator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/city/Cities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/city/Cities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/web/MapsApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DistanceCalculator/com/tobycook/web/MapsApi.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tobycook/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tobycook/city/Cities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/city/Cities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tobycook/city/RouteInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/city/RouteInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tobycook/city/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/city/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,12 +21,15 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.54169637">
       <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/tobycook/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-176">
-                  <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+                <state relative-caret-position="394">
+                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -34,25 +37,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/Cities.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-645">
-                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#244#245#0" expanded="true" />
-                    <element signature="e#285#286#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="480">
+                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -60,12 +46,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+                <state relative-caret-position="33">
+                  <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -74,10 +60,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/RouteInformation.java">
+            <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/Route.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+                <state relative-caret-position="405">
+                  <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
                 </state>
               </provider>
             </entry>
@@ -100,10 +86,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/tobycook/city/RouteInformation.java" />
-        <option value="$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java" />
-        <option value="$PROJECT_DIR$/src/com/tobycook/Main.java" />
         <option value="$PROJECT_DIR$/src/com/tobycook/city/Cities.java" />
         <option value="$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java" />
+        <option value="$PROJECT_DIR$/src/com/tobycook/city/Route.java" />
+        <option value="$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java" />
+        <option value="$PROJECT_DIR$/src/com/tobycook/Main.java" />
       </list>
     </option>
   </component>
@@ -125,8 +112,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,14 +151,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548718013457" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548759374872" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -237,7 +223,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14346765" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16056167" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -245,13 +231,13 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29081634" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29081634" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39897436" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32993513" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32820514" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.327551" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32923076" />
@@ -286,46 +272,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/RouteInformation.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/Route.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tobycook/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/Cities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-645">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/TravelDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="165">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tobycook/city/Cities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tobycook/web/MapsApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        <state relative-caret-position="33">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tobycook/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
