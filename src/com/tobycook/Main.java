@@ -11,9 +11,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    // TODO: Get coordinates of city and calculate using Haversine formula
-    // TODO: Add loop to store list of routes, unit exit command is provided
     public static void main(String[] args) {
+        run(args);
+    }
+
+    public static void run(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Read origin city
         System.out.print("Origin city: ");
@@ -57,9 +59,21 @@ public class Main {
             return;
         }
 
-
         // Print formatted information about travel
         route.print();
+
+        // Check if user wants to check another route, exit if not
+        System.out.print("Would you like to check another route? (Y/N) ");
+        String input = scanner.nextLine().toUpperCase();
+
+        if (input.equals("Y")) {
+            run(args);
+        } else if (input.equals("N")){
+            System.exit(0);
+        } else {
+            System.out.println("Invalid command... exiting");
+            System.exit(0);
+        }
     }
 
     private static String readTravelMode() {
